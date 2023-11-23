@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        const allOptions = ["rock", "paper", "scissors"];
+
+
+        function getComputerChoice(){
+
+            let ComputerAnswer = allOptions[(Math.floor(Math.random() * allOptions.length))];
+
+            return ComputerAnswer;
+
+        };
+
+        let pchoice = prompt("your choice!");
+
+        const playerChoice = pchoice;
+
+        const ComputerChoice = getComputerChoice();
+
+
+        function playRound(playerChoice, ComputerChoice){
+
+            if(playerChoice.toLowerCase() === "rock" && ComputerChoice === "rock"){
+                return("Both selected rock, so its a tie for now!");
+            } else if(playerChoice.toLowerCase() === "rock" && ComputerChoice === "paper"){
+                return("Paper beats rock, you lose!");
+            } else if(playerChoice.toLowerCase() === "rock" && ComputerChoice === "scissors"){
+                return("Rock beats scissors, you win!");
+            } else if(playerChoice.toLowerCase() === "paper" && ComputerChoice === "rock"){
+                return("Paper beats rock, you win!");
+            } else if(playerChoice.toLowerCase() === "paper" && ComputerChoice === "paper"){
+                return("Both selected Paper, tie");
+            } else if(playerChoice.toLowerCase() === "paper" && ComputerChoice === "scissors"){
+                return("Scissors beats paper, you lose");
+            } else if(playerChoice.toLowerCase() === "scissors" && ComputerChoice === "rock"){
+                return("Rock beats scissors, you lose!");
+            } else if(playerChoice.toLowerCase() === "scissors" && ComputerChoice === "paper"){
+                return("Scissors beats paper, you win!");
+            } else if(playerChoice.toLowerCase() === "scissors" && ComputerChoice === "scissors"){
+                return("Both selected scissors, Tie!");
+            }else{
+                return("Error!")
+            }
+        };
+
+
+
+        alert(playRound(playerChoice, ComputerChoice));
+
+
+    </script>
+    
+</body>
+
+
+</html>
